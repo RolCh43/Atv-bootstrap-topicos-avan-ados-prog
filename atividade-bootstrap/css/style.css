@@ -1,0 +1,46 @@
+/* =========================================================
+   Ajustes visuais mínimos.
+   Todo o layout e a responsividade vêm das classes do Bootstrap.
+   ========================================================= */
+
+/* Compensa a altura da navbar fixa ao navegar pelos links (#ancoras) */
+html {
+  scroll-padding-top: 70px;
+}
+
+/* Espaço para o conteúdo não ficar escondido atrás da navbar fixa */
+body {
+  padding-top: 56px;
+}
+
+/* Altura do carrossel se adapta ao tamanho da tela */
+.carousel-img {
+  height: 60vh;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+/* Sombra no texto do carrossel para melhorar o contraste (acessibilidade) */
+.carousel-caption {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  bottom: 15%;
+}
+
+/* Efeito leve ao passar o mouse sobre os cards */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Respeita usuários que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transition: none;
+    transform: none;
+  }
+}

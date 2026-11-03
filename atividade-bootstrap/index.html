@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DevNova Soluções - página responsiva desenvolvida com Bootstrap 5">
+  <title>BigCompany | Atividade Bootstrap</title>
+
+  <!-- Bootstrap 5 via CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+ 
+  <a class="visually-hidden-focusable btn btn-warning position-absolute m-2" href="#conteudo">
+    Pular para o conteúdo principal
+  </a>
+
+  
+  <!-- HEADER + COMPONENTE 1: NAVBAR (menu colapsável)-->
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow" aria-label="Menu principal">
+      <div class="container">
+        <!-- Logo / título do site -->
+        <a class="navbar-brand fw-bold" href="#inicio">
+          <span aria-hidden="true">&#9670;</span> DevNova
+        </a>
+
+        <!-- Botão hamburger: aparece apenas em telas menores que "lg" -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false"
+                aria-label="Abrir ou fechar o menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Itens do menu (ficam escondidos no mobile até clicar no hamburger) -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#inicio">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================================================== -->
+  <!-- CONTEÚDO PRINCIPAL                                     -->
+  <!-- ===================================================== -->
+  <main id="conteudo" class="flex-grow-1">
+
+   
+    <!-- COMPONENTE 2: CARROSSEL (galeria de destaques)-->
+  
+    <section id="inicio" aria-label="Destaques">
+      <!-- data-bs-ride="carousel" ativa o auto-play; carousel-fade deixa a transição suave -->
+      <div id="carrosselDestaques" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <!-- Indicadores (bolinhas) -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="0"
+                  class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/slide1.svg" class="d-block w-100 carousel-img" alt="Equipe desenvolvendo um site em notebooks">
+            <div class="carousel-caption">
+              <h1 class="display-5 fw-bold">Desenvolvimento Web</h1>
+              <p class="lead d-none d-sm-block">Sites modernos, rápidos e responsivos para o seu negócio.</p>
+              <a href="#servicos" class="btn btn-primary btn-lg">Conheça nossos serviços</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/slide2.svg" class="d-block w-100 carousel-img" alt="Celular exibindo um aplicativo">
+            <div class="carousel-caption">
+              <h2 class="display-5 fw-bold">Aplicativos Mobile</h2>
+              <p class="lead d-none d-sm-block">Apps para Android e iOS com ótima experiência de uso.</p>
+              <a href="#planos" class="btn btn-light btn-lg">Ver planos</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/slide3.svg" class="d-block w-100 carousel-img" alt="Servidores na nuvem conectados">
+            <div class="carousel-caption">
+              <h2 class="display-5 fw-bold">Soluções em Nuvem</h2>
+              <p class="lead d-none d-sm-block">Infraestrutura escalável, segura e sempre disponível.</p>
+              <a href="#contato" class="btn btn-success btn-lg">Fale conosco</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles anterior / próximo -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Slide anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo slide</span>
+        </button>
+      </div>
+    </section>
+
+  
+    <!-- COMPONENTE 3: CARDS (listagem de serviços)-->
+    
+    <section id="servicos" class="py-5" aria-labelledby="titulo-servicos">
+      <div class="container">
+        <h2 id="titulo-servicos" class="text-center fw-bold mb-2">Nossos Serviços</h2>
+        <p class="text-center text-body-secondary mb-5">Soluções completas para tirar a sua ideia do papel.</p>
+
+        <!-- Grid responsivo: 1 coluna no mobile, 2 no tablet, 3 no desktop -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+          <div class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="img/card1.svg" class="card-img-top" alt="Ilustração de um site em uma tela de computador">
+              <div class="card-body">
+                <h3 class="card-title h5">Criação de Sites</h3>
+                <p class="card-text">Sites institucionais e landing pages responsivas, otimizadas para buscadores (SEO).</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 pb-3">
+                <!-- Botão que abre o MODAL (componente 6) passando o nome do serviço -->
+                <button type="button" class="btn btn-outline-primary w-100"
+                        data-bs-toggle="modal" data-bs-target="#modalServico"
+                        data-servico="Criação de Sites">
+                  Ver detalhes
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="img/card2.svg" class="card-img-top" alt="Ilustração de um aplicativo em um celular">
+              <div class="card-body">
+                <h3 class="card-title h5">Aplicativos Mobile</h3>
+                <p class="card-text">Desenvolvimento de aplicativos nativos e híbridos para Android e iOS.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 pb-3">
+                <button type="button" class="btn btn-outline-primary w-100"
+                        data-bs-toggle="modal" data-bs-target="#modalServico"
+                        data-servico="Aplicativos Mobile">
+                  Ver detalhes
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="img/card3.svg" class="card-img-top" alt="Ilustração de uma nuvem com servidores">
+              <div class="card-body">
+                <h3 class="card-title h5">Hospedagem em Nuvem</h3>
+                <p class="card-text">Hospedagem gerenciada, backups automáticos e monitoramento 24 horas por dia.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 pb-3">
+                <button type="button" class="btn btn-outline-primary w-100"
+                        data-bs-toggle="modal" data-bs-target="#modalServico"
+                        data-servico="Hospedagem em Nuvem">
+                  Ver detalhes
+                </button>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+   
+    <!-- COMPONENTE 4: TABELA (comparativo de planos)-->
+    
+    <section id="planos" class="py-5 bg-body-tertiary" aria-labelledby="titulo-planos">
+      <div class="container">
+        <h2 id="titulo-planos" class="text-center fw-bold mb-2">Planos e Preços</h2>
+        <p class="text-center text-body-secondary mb-5">Compare os planos e escolha o ideal para você.</p>
+
+        <!-- table-responsive: cria scroll horizontal em telas pequenas -->
+        <div class="table-responsive shadow-sm rounded">
+          <!-- table-striped: alterna as cores das linhas | table-hover: destaca a linha ao passar o mouse -->
+          <table class="table table-striped table-hover align-middle mb-0">
+            <caption class="px-2">Valores mensais fictícios, apenas para demonstração.</caption>
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Plano</th>
+                <th scope="col">Páginas</th>
+                <th scope="col">Armazenamento</th>
+                <th scope="col">Suporte</th>
+                <th scope="col">Preço/mês</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Básico</th>
+                <td>Até 3</td>
+                <td>5 GB</td>
+                <td>E-mail</td>
+                <td>R$ 49,90</td>
+              </tr>
+              <tr>
+                <th scope="row">Essencial</th>
+                <td>Até 5</td>
+                <td>10 GB</td>
+                <td>E-mail e chat</td>
+                <td>R$ 89,90</td>
+              </tr>
+              <tr>
+                <th scope="row">Profissional <span class="badge text-bg-primary">Popular</span></th>
+                <td>Até 10</td>
+                <td>50 GB</td>
+                <td>Chat em horário comercial</td>
+                <td>R$ 149,90</td>
+              </tr>
+              <tr>
+                <th scope="row">Empresarial</th>
+                <td>Até 25</td>
+                <td>200 GB</td>
+                <td>Chat e telefone</td>
+                <td>R$ 299,90</td>
+              </tr>
+              <tr>
+                <th scope="row">Premium</th>
+                <td>Ilimitadas</td>
+                <td>1 TB</td>
+                <td>24 horas, 7 dias</td>
+                <td>R$ 499,90</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- COMPONENTE 5: FORMULÁRIO (contato)-->
+    
+    <section id="contato" class="py-5" aria-labelledby="titulo-contato">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <h2 id="titulo-contato" class="text-center fw-bold mb-2">Fale Conosco</h2>
+            <p class="text-center text-body-secondary mb-4">Preencha o formulário e retornaremos em até 24 horas.</p>
+
+            <!-- novalidate: desativa os balões padrão do navegador para usar o estilo do Bootstrap,
+                 mas a validação continua sendo feita pelos atributos HTML5 (required, type, minlength) -->
+            <form id="formContato" class="card card-body shadow-sm needs-validation" novalidate>
+              <div class="row g-3">
+
+                <!-- Campo 1: Nome (text) -->
+                <div class="col-12 col-md-6">
+                  <label for="nome" class="form-label">Nome completo</label>
+                  <input type="text" class="form-control" id="nome" name="nome"
+                         placeholder="Seu nome" required minlength="3" autocomplete="name">
+                  <div class="invalid-feedback">Informe seu nome (mínimo de 3 letras).</div>
+                </div>
+
+                <!-- Campo 2: E-mail (email) -->
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="email" name="email"
+                         placeholder="nome@exemplo.com" required autocomplete="email">
+                  <div class="invalid-feedback">Informe um e-mail válido.</div>
+                </div>
+
+                <!-- Campo 3: Telefone (tel) -->
+                <div class="col-12 col-md-6">
+                  <label for="telefone" class="form-label">Telefone <span class="text-body-secondary">(opcional)</span></label>
+                  <input type="tel" class="form-control" id="telefone" name="telefone"
+                         placeholder="(71) 99999-9999" pattern="[0-9()\s-]{8,15}" autocomplete="tel"
+                         aria-describedby="ajudaTelefone">
+                  <div id="ajudaTelefone" class="form-text">Apenas números, parênteses e traço.</div>
+                  <div class="invalid-feedback">Telefone em formato inválido.</div>
+                </div>
+
+                <!-- Campo 4: Serviço de interesse (select) -->
+                <div class="col-12 col-md-6">
+                  <label for="assunto" class="form-label">Serviço de interesse</label>
+                  <select class="form-select" id="assunto" name="assunto" required>
+                    <option value="" selected disabled>Selecione...</option>
+                    <option>Criação de Sites</option>
+                    <option>Aplicativos Mobile</option>
+                    <option>Hospedagem em Nuvem</option>
+                    <option>Outro</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione um serviço.</div>
+                </div>
+
+                <!-- Campo 5: Mensagem (textarea) -->
+                <div class="col-12">
+                  <label for="mensagem" class="form-label">Mensagem</label>
+                  <textarea class="form-control" id="mensagem" name="mensagem" rows="4"
+                            placeholder="Conte um pouco sobre o seu projeto..." required minlength="10"></textarea>
+                  <div class="invalid-feedback">Escreva uma mensagem com pelo menos 10 caracteres.</div>
+                </div>
+
+                <!-- Campo 6: Aceite (checkbox) -->
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="aceite" name="aceite" required>
+                    <label class="form-check-label" for="aceite">
+                      Concordo em ser contatado pela DevNova.
+                    </label>
+                    <div class="invalid-feedback">Você precisa concordar antes de enviar.</div>
+                  </div>
+                </div>
+
+                <!-- Botão de envio -->
+                <div class="col-12 d-grid d-md-flex justify-content-md-end">
+                  <button type="submit" class="btn btn-primary btn-lg px-5">Enviar mensagem</button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Alerta de sucesso (fica escondido até o formulário ser enviado corretamente) -->
+            <div id="alertaSucesso" class="alert alert-success mt-3 d-none" role="status" aria-live="polite">
+              Mensagem enviada com sucesso! Obrigado pelo contato.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <!-- COMPONENTE 6: MODAL (detalhes do serviço)-->
+ 
+  <div class="modal fade" id="modalServico" tabindex="-1"
+       aria-labelledby="modalServicoTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modalServicoTitulo">Detalhes do serviço</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalServicoDescricao">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <ul class="mb-0">
+            <li>Atendimento personalizado</li>
+            <li>Prazo de entrega combinado com você</li>
+            <li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <!-- Confirmar: fecha o modal e leva o usuário até o formulário de contato -->
+          <a href="#contato" id="btnConfirmarModal" class="btn btn-primary">Quero contratar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- FOOTER-->
+
+  <footer class="bg-dark text-light py-4 mt-auto">
+    <div class="container">
+      <div class="row gy-3 align-items-center">
+        <div class="col-12 col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2026 BigCompany. Todos os direitos reservados.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <nav aria-label="Links do rodapé">
+            <ul class="nav justify-content-center justify-content-md-end">
+              <li class="nav-item"><a class="nav-link link-light px-2" href="#inicio">Início</a></li>
+              <li class="nav-item"><a class="nav-link link-light px-2" href="#servicos">Serviços</a></li>
+              <li class="nav-item"><a class="nav-link link-light px-2" href="#planos">Planos</a></li>
+              <li class="nav-item"><a class="nav-link link-light px-2" href="#contato">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 via CDN (JS + Popper)-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+
+  <!-- JavaScript nativo da página -->
+  <script src="js/script.js"></script>
+</body>
+</html>
